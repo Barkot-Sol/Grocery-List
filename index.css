@@ -27,7 +27,7 @@ body{
     display: grid;
     align-items: center;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     border-radius: 0.25rem;
     letter-spacing: 1.1;
     text-transform: capitalize;
@@ -38,7 +38,7 @@ body{
 }
 .alert-success{
     color: #155724;
-    background: #f8d7da;
+    background: #d4edda;
 }
 h3{
     font-size: 25px;
