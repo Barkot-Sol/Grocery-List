@@ -72,7 +72,6 @@ function displayAlert(text,action){
 
 function clearItem(){
     const itemsEL = document.querySelectorAll(".items"); 
-    console.log(itemsEL.value);
     if(itemsEL.length>0){
         itemsEL.forEach(function(itemsEL){
             listEL.removeChild(itemsEL);
@@ -81,7 +80,7 @@ function clearItem(){
     containerEL.classList.remove("show-container");
     displayAlert("Items Cleared", "success");
     setDefault();
-    localStorage.removeItem(".list");
+    localStorage.removeItem("list");
 }
 
 function setDefault(){
@@ -96,7 +95,6 @@ function intolocalStorage(id, value){
     let items = getLocalStorage();
     items.push(grocery);
     localStorage.setItem("list", JSON.stringify(items));
-
 }
 
 function removeFromLocalStorage(id){
@@ -111,12 +109,12 @@ function removeFromLocalStorage(id){
 
 function editLocalStorage(id, value){
     let items = getLocalStorage();
-    items = items.map(function(){
-        if(items.id === id){
-            items.id = value;
+    items = items.map(function(item){
+        if(item.id === id){
+            item.value = value;
         }
-        return items;
-    })
+        return item;
+    });
     localStorage.setItem("list", JSON.stringify(items));
 }
 
