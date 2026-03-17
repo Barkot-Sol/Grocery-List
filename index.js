@@ -23,7 +23,7 @@ function addItem(e){
         createItems(id,value);
         containerEL.classList.add("show-container");
         displayAlert("item Successfully added", "success");
-        localStorage(id,value);
+        intolocalStorage(id,value);
         setDefault();
     }
     else if(value && editFlag){
@@ -91,7 +91,7 @@ function setDefault(){
     addBtn.textContent = "Add";
 }
 
-function localStorage(id, value){
+function intolocalStorage(id, value){
     const grocery = {id,value}
     let items = getLocalStorage();
     items.push(grocery);
